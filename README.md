@@ -133,3 +133,66 @@
     )
 
 >注意： document.getElementById('app') 后面一定不要加分号，因为这是传一个实参传递到render函数中。
+
+# 第三部分
+## JSX：
+
+
+# 第四部分
+## react中最重要的三个东西： state props context
+
+#### 1、state 状态
+
+
+#### 2、props 属性 => 数据传递 通过props传
+
+###### 父组件向子组件传递：
+
+  1. 直接在父组件中绑定自定义属性，number类型加{}，例如88，写成aa={88}
+  2. 子组件中直接使用，太方便。{this.props.aa}
+
+第一步：父组件：直接在子组件上绑定属性值
+
+```js
+    import React from 'react';
+    import MyCompon from './MyCompon.js';
+
+    class App extends React.Component {
+
+      constructor() {
+        super()
+      }
+
+      render() {
+        return (
+          <div>
+            <MyCompon aa={88} bb='hkhj'></MyCompon>
+            <MyCompon></MyCompon>
+            <MyCompon></MyCompon>
+          </div>
+        );
+      }
+
+    }
+    export default App;
+```
+
+第二步：子组件获取父组件传过来的值：
+```
+    import React from 'react';
+    class MyCompon extends React.Component {
+      constructor() {
+        super()
+      }
+      render() {
+        return (
+          <div>
+            我是MyCompon组件！
+            {this.props.aa}
+          </div>
+      )}
+    }
+    export default MyCompon;
+```
+
+#### 3、context
