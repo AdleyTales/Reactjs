@@ -143,6 +143,32 @@
 
 #### 1、state 状态
 
+> 改变页面UI(视图层)的根本原因是state改变
+
+在constructor构造函数中设置一个state属性值,写一个add2方法，setState kkk+1,
+onClick 绑定事件，点击执行add2方法。bind是为了改变this指向，将本组件上add2方法，指向了点击p上。
+```js
+  constructor() {
+    super();
+    this.state = {
+      kkk:2000
+    }
+  }
+
+  add2(){
+    this.setState({kkk: this.state.kkk +1});
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.kkk}
+        <p onClick={this.add2.bind(this)}>点击2</p>
+      </div>
+    );
+  }
+
+```
 
 #### 2、props 属性 => 数据传递 通过props传
 
@@ -178,7 +204,7 @@
 ```
 
 第二步：子组件获取父组件传过来的值：
-```
+```js
     import React from 'react';
     class MyCompon extends React.Component {
       constructor() {

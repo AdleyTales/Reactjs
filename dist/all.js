@@ -1044,40 +1044,25 @@ var App = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
-    _this.y = 1000;
+    _this.y = 'yyyyyyyyyyy';
     return _this;
   }
 
   _createClass(App, [{
     key: 'add',
     value: function add() {
-      this.y++;
-      console.log(this.y);
+      alert(this.y);
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(_MyCompon2.default, { a: '100', b: 'bbbbbbb', c: 'ddddddddddd' }),
         _react2.default.createElement(_MyCompon2.default, null),
         _react2.default.createElement(_MyCompon2.default, null),
-        this.y,
-        _react2.default.createElement(
-          'p',
-          { onClick: this.add.bind(this) },
-          '\u70B9\u51FB'
-        ),
-        _react2.default.createElement(
-          'p',
-          { onClick: function onClick() {
-              console.log(_this2.add);
-            } },
-          '\u70B9\u51FB2'
-        )
+        this.y
       );
     }
   }]);
